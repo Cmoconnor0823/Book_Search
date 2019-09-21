@@ -1,19 +1,28 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
 
 class App extends Component {
   render() {
+    const [searchTerm, setSearchTerm] = useState('');
+    const onInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  }
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <section>
+      <form>
+        <label>
+          <span>Search for books</span>
+          <input
+            type="search"
+            placeholder="microservice, restful design, etc.,"
+            value={searchTerm}
+            onChange={onInputChange}
+          />
+          <button type="submit">Search</button>
+        </label>
+      </form>
+    </section>
     );
   }
 }
