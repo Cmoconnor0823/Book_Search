@@ -67,6 +67,8 @@ const Search = () => {
                   <div>
                     <h3>{ book.volumeInfo.title }</h3>
                     <p>{ bookAuthors(book.volumeInfo.authors) }</p>
+                    <p>{ (book.volumeInfo.description ? 
+                book.volumeInfo.description : "No Description Available") }</p>
                     <p>{book.volumeInfo.publishedDate}</p>
                   </div>
                 </div>
