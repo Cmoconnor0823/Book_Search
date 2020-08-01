@@ -8,11 +8,11 @@ class AddBookBtn extends React.Component{
  
     postToDB = (book) => {
         var dbBook = {
-          title: book.volumeInfo.title,
-          authors: book.volumeInfo.authors,
-          synopsis: book.volumeInfo.description ? book.volumeInfo.description : "No Description Available",
-          thumbnail: book.volumeInfo.imageLinks.thumbnail ?
-          book.volumeInfo.imageLinks.thumbnail : "#",
+          title: book.title,
+          authors: book.authors,
+          synopsis: book.description ? book.description : "No Description Available",
+          thumbnail: book.imageLinks.thumbnail ?
+          book.imageLinks.thumbnail : "No Thumbnail Available",
           link: book.columeInfo.infoLink
         }
     

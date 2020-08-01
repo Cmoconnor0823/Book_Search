@@ -5,6 +5,7 @@ import { Container, Row, Col } from "../Grid";
 
 // BookList renders a bootstrap list item
 export function BookList({children}) {
+  console.log(children, "children")
   return (
     <ul className="list-group">{children}</ul>
     );
@@ -14,9 +15,9 @@ export function BookList({children}) {
   export class BookListItem extends React.Component{
 
     render(){
-     console.log(this.props)
-;    return (
-      <li>
+     console.log(this.props.link, "ello");
+      return (
+      <li key={this.props.key}>
         <Container>
           <Row>
             <Col size="xs-4 sm-3">
